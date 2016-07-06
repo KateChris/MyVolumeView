@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
@@ -48,8 +49,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        TextView hide = (TextView) findViewById(R.id.tv_hide);
-        TextView show = (TextView) findViewById(R.id.tv_show);
+        Button hide = (Button) findViewById(R.id.tv_hide);
+        Button show = (Button) findViewById(R.id.tv_show);
 
         show.setOnClickListener(new View.OnClickListener() {
             @Override

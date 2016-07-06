@@ -12,20 +12,20 @@
     tools:context="com.chris.volumeview.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
+    <Button
         android:id="@+id/tv_hide"
         android:gravity="center"
-        android:background="@color/colorAccent"
+        android:background="@drawable/hide_selector"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:text="hide" />
 
-    <TextView
+    <Button
         android:layout_marginTop="50dp"
         android:layout_below="@id/tv_hide"
         android:gravity="center"
         android:id="@+id/tv_show"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/show_selector"
         android:text="show"
         android:layout_width="80dp"
         android:layout_height="50dp" />

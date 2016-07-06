@@ -20,7 +20,7 @@ public class MusicPlayerService extends Service {
     /**
      * 是否正在播放中
      */
-    boolean isplaying;
+    boolean isplaying=true;
     /**
      * 定时器，定时进行检测当前应该创建还是移除悬浮窗。
      */
@@ -76,8 +76,6 @@ public class MusicPlayerService extends Service {
     @Subscribe
     public void onEventMainThread(FirstEvent event) {
 
-        String msg = "onEventMainThread收到了消息：" + event.getMsg();
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
         isplaying = event.getMsg();
         if (event.getMsg()==true){
             volumeViewController.showAudioView();
