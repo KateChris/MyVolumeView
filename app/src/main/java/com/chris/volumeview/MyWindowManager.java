@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.view.Gravity;
 import android.view.WindowManager;
 
@@ -49,7 +50,11 @@ public class MyWindowManager {
 			smallWindow = new FloatWindowSmallView(context);
 			if (smallWindowParams == null) {
 				smallWindowParams = new WindowManager.LayoutParams();
-				smallWindowParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+					smallWindowParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+				} else {
+					smallWindowParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+				}
 				smallWindowParams.format = PixelFormat.RGBA_8888;
 				smallWindowParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
 						| WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
